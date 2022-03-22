@@ -1,0 +1,47 @@
+
+
+Fonts
+
+----------------------------------------------
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;600&family=Pacifico&family=Source+Sans+Pro:wght@400;600;700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+----------------------------------------------
+
+
+Skills
+----------------------------------------------
+Html, Css, Js, React, Redux, Sass, Bootstrap, Nodejs, Express, MySQL, etc.
+
+TOOLS
+VScode, Github, Slack
+
+----------------------------------------------
+
+About Text
+
+----------------------------------------------
+Apaixonado por tecnologia, empreendedorismo, séries e jogos.
+Formado em Analise e Desenvolvimento de Sistemas, onde eu tive o primeiro contato com programação e desenvolvi pequenos projetos.
+Atualmente estudando na Trybe para ser um Desenvolvedor Web FullStack.
+----------------------------------------------
+
+
+Theme
+----------------------------------------------
+    body:"#FCF6F4",
+    text:"#000000",
+    fontFamily:"'Source Sans Pro', sans-serif",
+    bodyRgba : "252, 246, 244",
+    textRgba:"0,0,0",
+
+
+----------------------------------------------
+
+
+
+
+
+
