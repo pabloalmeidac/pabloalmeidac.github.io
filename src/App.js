@@ -3,7 +3,10 @@ import { ThemeProvider } from 'styled-components';
 import { lightTheme } from './components/Themes';
 import GlobalStyle from './globalStyles';
 
-import Main from './components/Main'
+import Main from './components/Main';
+import AboutPage from './components/AboutPage';
+import MySkillsPage from './components/MySkillsPage';
+import ProjectPage from './components/ProjectPage';
 
 function App() {
   return <>
@@ -11,6 +14,9 @@ function App() {
       <ThemeProvider theme={ lightTheme }>
         <Switch>
           <Route exact path='/' component={ Main }/>
+          <Route exact path='/about' component={ AboutPage }/>
+          <Route exact path='/skills' component={ MySkillsPage }/>
+          <Route exact path='/projects' component={ ProjectPage }/>
         </Switch>
       </ThemeProvider>
   </>
