@@ -24,10 +24,6 @@ cursor: pointer;
     background-color: rgba(101,101,101,0.4);
     box-shadow: 0 0 8px 6px rgba(101,101,101,0.2);
 }
-&>*:first-child{
-    text-decoration: none;
-    color: inherit;
-}
 `
 
 const PowerButton = () => {
