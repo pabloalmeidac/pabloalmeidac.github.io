@@ -5,7 +5,6 @@ export const PowerBtn = (props) => {
     viewBox="0 0 431.44 574.67"
     {...props}
     >
-      <title>{"Maker's Start Button"}</title>
       <path
         style={{
           color: "#000",
@@ -175,7 +174,7 @@ return (
 
 
 
-export const Design = (props) => { 
+export const Front = (props) => { 
 return (
   <svg
     aria-hidden="true"
@@ -195,7 +194,7 @@ return (
 
 }
 
-export const Develope = (props) => { 
+export const Back = (props) => { 
 return (
   <svg
     aria-hidden="true"
