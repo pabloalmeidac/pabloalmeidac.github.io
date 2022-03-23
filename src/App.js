@@ -16,7 +16,7 @@ function App() {
           <Route exact path='/' component={ Main }/>
           <Route exact path='/about' component={ AboutPage }/>
           <Route exact path='/skills' component={ MySkillsPage }/>
-          <Route exact path='/projects' component={ ProjectPage }/>
+          <Route exact path='/portfolio' component={ ProjectPage }/>
         </Switch>
       </ThemeProvider>
   </>
