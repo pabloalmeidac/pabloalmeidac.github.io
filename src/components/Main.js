@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion'
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom'
 import LogoComponent from '../subComponents/LogoComponent';
 import PowerButton from '../subComponents/PowerButton';
 import SocialIcons from '../subComponents/SocialIcons';
-import { Start } from './AllSvgs';
 import Intro from './Intro';
 
 
@@ -68,28 +67,6 @@ const SKILLS = styled(NavLink)`
   z-index: 1;
 `
 
-const Center = styled.button`
-  position: absolute;
-  top: ${props => props.click ? '85%': '50%'};
-  left: ${props => props.click ? '92%': '50%'};
-  transform: translate(-50%,-50%);
-  border: none;
-  outline: none;
-  background-color: transparent;
-  cursor: pointer;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  transition: all 1s ease;
-
-  &>:last-child{
-    display: ${props => props.click ? 'none' : 'inline-block'};
-    padding-top: 1rem;
-  }
-`
-
 const DarkDiv = styled.div`
   position: absolute;
   top: 0;
@@ -101,11 +78,15 @@ const DarkDiv = styled.div`
   z-index: 1;
   transition: height 0.5s ease, width 1s ease 0.5s;
 `
+
 const Main = () => {
 
   const [click, setClick] = useState(false);
-
-  const handleClick = () => setClick(!click);
+  
+  useEffect(() => {
+    setClick(!click);
+    
+  }, [])
 
   return (
     <MainContainer>
@@ -114,12 +95,6 @@ const Main = () => {
         <PowerButton />
         <LogoComponent theme={click ? 'dark' : 'light'}/>
         <SocialIcons theme={click ? 'dark' : 'light'}/>
-        <DarkDiv click={click}/>
-        <Center click={click} onClick= {() => handleClick()}>
-          <Start width={click ? 120 : 200} height={click ? 120 : 200} fill='currentColor'/>
-          <span>Clique aqui...</span>
-        </Center>
-
         <Contact target="_blank" to={{pathname:"mailto:pabloalmeidacti@gmail.com"}}>
           <motion.h2
             whileHover={{ scale: 1.1 }}
@@ -155,7 +130,7 @@ const Main = () => {
         </SKILLS>
         </BottomBar>
       </Container>
-      {click ? <Intro click={click} /> : null }
+      {click ? <Intro /> : null}
     </MainContainer>
   )
 }

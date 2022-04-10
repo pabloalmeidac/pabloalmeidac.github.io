@@ -69,7 +69,7 @@ const Intro = () => {
       transition={{ type: 'spring', duration:2, delay:1 }}
     >
       <SubBox>
-        <Text>
+        <Text >
           <h1>Oi,</h1>
           <h3>Meu nome é Pablo Almeida.</h3>
           <h6>Sou estudante de desenvolvimento Web Full Stack.</h6>
@@ -79,7 +79,7 @@ const Intro = () => {
         <motion.div
           initial={{opacity:0}}
           animate={{opacity: 1}}
-          transition={{ duration:1, delay:2 }}
+          transition={{ duration:1, delay:1 }}
         >
           <img className="pic" src={Me} alt="Profile Pic" />
         </motion.div>
