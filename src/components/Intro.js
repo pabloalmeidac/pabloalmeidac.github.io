@@ -70,6 +70,7 @@ const Intro = () => {
     >
       <SubBox>
         <Text >
+          
           <h1>Oi,</h1>
           <h3>Meu nome é Pablo Almeida.</h3>
           <h6>Sou estudante de desenvolvimento Web Full Stack.</h6>
