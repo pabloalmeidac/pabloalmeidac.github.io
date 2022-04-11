@@ -86,6 +86,7 @@ const Main = () => {
   useEffect(() => {
     setClick(!click);
     
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (
