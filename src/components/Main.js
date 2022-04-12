@@ -6,6 +6,7 @@ import LogoComponent from '../subComponents/LogoComponent';
 import PowerButton from '../subComponents/PowerButton';
 import SocialIcons from '../subComponents/SocialIcons';
 import Intro from './Intro';
+import { mediaQueries } from "./Themes";
 
 
 const MainContainer = styled.div`
@@ -20,6 +21,16 @@ const MainContainer = styled.div`
     font-family: 'Karla', sans-serif ;
     font-weight: 500;
   }
+
+  h2 {
+    ${mediaQueries(40)`
+      font-size:1.2em;
+  `};
+
+    ${mediaQueries(30)`
+      font-size:1em;
+  `};
+  }
 `
 
 const Container = styled.div`
@@ -27,7 +38,7 @@ const Container = styled.div`
 `
 
 const Contact = styled(NavLink)`
-  color: ${props => props.theme.text};
+  color: ${(props) => (props.click ? props.theme.body : props.theme.text)};
   position: absolute;
   top: 2rem;
   right: calc(1rem + 2vw);
@@ -36,13 +47,17 @@ const Contact = styled(NavLink)`
 `
 
 const Portfolio = styled(NavLink)`
-  color: ${props => props.theme.text};
+  color: ${(props) => (props.click ? props.theme.body : props.theme.text)};
   position: absolute;
   top: 50%;
   right: calc(1rem + 2vw);
   transform: rotate(90deg) translate(-50%, -50%);
   text-decoration: none;
   z-index:1;
+
+  @media only screen and (max-width: 50em) {
+    text-shadow: ${(props) => (props.click ? "0 0 4px #000" : "none")};
+  }
 `
 
 const BottomBar = styled.div`
@@ -57,7 +72,7 @@ const BottomBar = styled.div`
 `
 
 const ABOUT = styled(NavLink)`
-  color: ${props => props.click ? props.theme.body : props.theme.text};
+  color: ${(props) => (props.click ? props.theme.body : props.theme.text)};
   text-decoration: none;
   z-index: 1;
 `
@@ -77,9 +92,23 @@ const DarkDiv = styled.div`
   height: ${props => props.click ? '100%' : '0%'};
   z-index: 1;
   transition: height 0.5s ease, width 1s ease 0.5s;
+
+  ${(props) =>
+    props.click
+      ? mediaQueries(50)`
+        height: 50%;
+        right:0;
+  
+        width: 100%;
+        transition: width 0.5s ease, height 1s ease 0.5s;`
+      : mediaQueries(50)`
+        height: 0;
+        width: 0;
+  `};
 `
 
 const Main = () => {
+  const mq = window.matchMedia("(max-width: 50em)").matches;
 
   const [click, setClick] = useState(false);
   
@@ -95,8 +124,13 @@ const Main = () => {
       <Container>
         <PowerButton />
         <LogoComponent theme={click ? 'dark' : 'light'}/>
-        <SocialIcons theme={click ? 'dark' : 'light'}/>
-        <Contact target="_blank" to={{pathname:"mailto:pabloalmeidacti@gmail.com"}}>
+        {mq ? (
+          <SocialIcons theme='light' />
+        ) : (
+          <SocialIcons theme={click ? 'dark' : 'light'}/>
+        )}
+        {mq ? (
+          <Contact click={+click} target="_blank" to={{pathname:"mailto:pabloalmeidacti@gmail.com"}}>
           <motion.h2
             whileHover={{ scale: 1.1 }}
             whileTap= {{ scale: 0.9 }}
@@ -104,16 +138,37 @@ const Main = () => {
             Diga oi...
           </motion.h2>
         </Contact>
-        <Portfolio to="/portfolio">
+        ) : (
+          <Contact click={false} target="_blank" to={{pathname:"mailto:pabloalmeidacti@gmail.com"}}>
           <motion.h2
             whileHover={{ scale: 1.1 }}
             whileTap= {{ scale: 0.9 }}
           >
-            Portfolio
+            Diga oi...
           </motion.h2>
+        </Contact>
+        )}
+        {mq ? (
+          <Portfolio click={+click} to="/portfolio">
+            <motion.h2
+              whileHover={{ scale: 1.1 }}
+              whileTap= {{ scale: 0.9 }}
+            >
+              Portfolio
+            </motion.h2>
         </Portfolio>
+        ) : (
+          <Portfolio click={+false} to="/portfolio">
+            <motion.h2
+              whileHover={{ scale: 1.1 }}
+              whileTap= {{ scale: 0.9 }}
+            >
+              Portfolio
+            </motion.h2>
+        </Portfolio>
+        )}
         <BottomBar>
-          <ABOUT to="/about" click={click}>
+          <ABOUT to="/about" click={mq ? +false : +click}>
             <motion.h2
               whileHover={{ scale: 1.1 }}
               whileTap= {{ scale: 0.9 }}
