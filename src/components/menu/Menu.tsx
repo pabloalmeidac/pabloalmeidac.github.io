@@ -12,5 +12,5 @@ export const Menu = () => {
         <li><a href='#contact'>Contato</a></li>
       </ul>
     </nav>
-  )
-}
+  );
+};

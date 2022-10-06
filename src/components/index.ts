@@ -1,4 +1,5 @@
-import { Menu } from "./menu/Menu";
+import { Menu } from './menu/Menu';
+import { Intro } from './intro/Intro';
 
 
-export { Menu };
+export { Menu, Intro };
