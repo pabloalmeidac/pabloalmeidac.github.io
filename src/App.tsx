@@ -1,4 +1,4 @@
-import { Menu, Intro, Experience, Portfolio } from './components';
+import { Menu, Intro, Experience, Portfolio, Contact } from './components';
 
 export const App = () => {
   return (
@@ -7,6 +7,7 @@ export const App = () => {
       <Intro />
       <Experience />
       <Portfolio />
+      <Contact />
     </>
   );
 };
