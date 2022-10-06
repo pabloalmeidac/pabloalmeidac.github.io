@@ -1,10 +1,11 @@
-import { Menu, Intro } from './components';
+import { Menu, Intro, Experience } from './components';
 
 export const App = () => {
   return (
     <>
       <Menu />
       <Intro />
+      <Experience />
     </>
   );
 };
