@@ -6,7 +6,7 @@ export const App = () => {
       <Menu />
       <Intro />
       <Experience />
-      <Portfolio />
+      
       <Contact />
       <Footer />
     </>
