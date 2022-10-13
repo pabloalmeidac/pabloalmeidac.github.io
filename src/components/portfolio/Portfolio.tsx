@@ -1,5 +1,4 @@
 import './portfolio.css';
-
 const data = [
   {
     id: 1,
