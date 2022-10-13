@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.8a7751ad.css",
+    "main.js": "/static/js/main.568788b8.js",
+    "static/js/787.1ed0c42c.chunk.js": "/static/js/787.1ed0c42c.chunk.js",
+    "static/media/me.png": "/static/media/me.413506bde28490d538b1.png",
+    "static/media/CV_PABLO.pdf": "/static/media/CV_PABLO.4858ebd79fd272691297.pdf",
+    "index.html": "/index.html",
+    "main.8a7751ad.css.map": "/static/css/main.8a7751ad.css.map",
+    "main.568788b8.js.map": "/static/js/main.568788b8.js.map",
+    "787.1ed0c42c.chunk.js.map": "/static/js/787.1ed0c42c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8a7751ad.css",
+    "static/js/main.568788b8.js"
+  ]
+}
