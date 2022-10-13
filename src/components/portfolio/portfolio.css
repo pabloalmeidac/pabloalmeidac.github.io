@@ -19,10 +19,12 @@
 
 .portfolio__item-image {
   border-radius: 1.5rem;
-  overflow: hidden;
+  max-width:550px;
+  max-height:260px;
+  overflow: hidden; 
 }
 
-.portfolio__item h3 {
+.portfolio__item h2 {
   margin: 1.2rem 0 2rem;
   border-bottom: 1px solid white;
 }
@@ -35,7 +37,9 @@
 
 .hashtags {
   padding: 0.5rem 0;
+  font-size: small;
   display: flex;
+  flex-wrap: wrap;
 }
 
 .tags {
